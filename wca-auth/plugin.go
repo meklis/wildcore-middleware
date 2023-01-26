@@ -4,7 +4,7 @@ import (
 	"net/http"
 )
 
-const PluginName = "wildcore_auth_middleware"
+const PluginName = "wca_auth"
 
 type Plugin struct{}
 

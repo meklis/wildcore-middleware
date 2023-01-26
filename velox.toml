@@ -1,0 +1,56 @@
+[velox]
+build_args = ['-trimpath', '-ldflags', '-s -X github.com/roadrunner-server/roadrunner/v2/internal/meta.version=v2.12.2 -X github.com/roadrunner-server/roadrunner/v2/internal/meta.buildTime=${TIME}']
+
+[roadrunner]
+ref = "v2.12.2"
+
+[github]
+    [github.token]
+    token = "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"
+    [github.plugins]
+    # LOGS
+    appLogger = { ref = "v3.2.0", owner = "roadrunner-server", repository = "app-logger" }
+    logger = { ref = "v3.2.0", owner = "roadrunner-server", repository = "logger" }
+
+    # CENTRIFUGE BROADCASTING PLATFORM
+    centrifuge = { ref = "v3.2.0", owner = "roadrunner-server", repository = "centrifuge" }
+
+    # WORKFLOWS ENGINE
+    temporal = { ref = "v3.0.0", owner = "temporalio", repository = "roadrunner-temporal" }
+
+    # METRICS
+    metrics = { ref = "v3.3.0", owner = "roadrunner-server", repository = "metrics" }
+
+    # HTTP + MIDDLEWARE
+    http = { ref = "v3.2.0", owner = "roadrunner-server", repository = "http" }
+    gzip = { ref = "v3.2.0", owner = "roadrunner-server", repository = "gzip" }
+    prometheus = { ref = "v3.2.0", owner = "roadrunner-server", repository = "prometheus" }
+    headers = { ref = "v3.2.0", owner = "roadrunner-server", repository = "headers" }
+    static = { ref = "v3.2.0", owner = "roadrunner-server", repository = "static" }
+
+    # RELOAD (for the DEV)
+    reload = { ref = "v3.2.0", owner = "roadrunner-server", repository = "reload" }
+
+    # SERVER
+    server = { ref = "v3.2.0", owner = "roadrunner-server", repository = "server" }
+
+    # KV
+    kv = { ref = "v3.2.0", owner = "roadrunner-server", repository = "kv" }
+
+    # FILESERVER (static files)
+    fileserver = { ref = "v3.2.0", owner = "roadrunner-server", repository = "fileserver" }
+
+    # gRPC plugin
+    grpc = { ref = "v4.0.2", owner = "roadrunner-server", repository = "grpc" }
+
+    # HEALTHCHECKS + READINESS CHECKS
+    status = { ref = "v3.2.0", owner = "roadrunner-server", repository = "status" }
+
+    # TCP for the RAW TCP PAYLOADS
+    tcp = { ref = "v3.2.0", owner = "roadrunner-server", repository = "tcp" }
+
+    wildcore_auth_middleware = { ref="master", owner = "meklis", repository= "wildcore-middleware", replace = "/home/meklis/projects/wildcore/agent/wildcore-middleware", folder="wca-auth"}
+
+[log]
+level = "debug"
+mode = "development"
